@@ -25,5 +25,9 @@ return [
     "customOurWorkComponent" => null,
 
     // Templates
-    "templates" => [],
+    "templates" => [
+        "our-work-record" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecord::class,
+
+        "our-work-record-thumb" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecordThumb::class,
+    ],
 ];

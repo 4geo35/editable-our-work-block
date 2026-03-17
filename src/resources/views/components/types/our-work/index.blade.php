@@ -7,11 +7,12 @@
     @if ($block->render_title)
         <x-tt::h2 class="mb-indent-half">{{ $block->render_title }}</x-tt::h2>
     @endif
-    <div class="row">
+    <div class="row" id="swiperBlockOurWork-{{ $block->id }}">
         @foreach($block->items as $index => $item)
             <div class="col w-full {{ $gridClass }} mb-indent">
                 <x-eowb::types.our-work.item :$item />
             </div>
         @endforeach
     </div>
+    @include("eowb::web.types.our-work.includes.swiper-script")
 @endif

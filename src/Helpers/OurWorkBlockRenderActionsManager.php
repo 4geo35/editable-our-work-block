@@ -8,6 +8,6 @@ class OurWorkBlockRenderActionsManager
 {
     public function expandOurWorkRecord(OurWorkRecordInterface $record): void
     {
-        $record->load("images");
+        $record->load("orderedImages");
     }
 }

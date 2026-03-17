@@ -1,8 +1,6 @@
 @props(["item"])
 <div class="h-full flex flex-nowrap space-x-indent p-indent-xs bg-white rounded-base border border-stroke">
-    <div class="w-[278px]">
-        Image
-    </div>
+    @include("eowb::web.types.our-work.includes.slider")
     <div class="flex-1 h-full flex flex-col justify-between space-y-indent py-indent-half pr-indent-half">
         <div class="flex-1">
             @if ($item->recordable->author_name)
@@ -44,16 +42,6 @@
                 </div>
             @endif
         </div>
-        @if (config("editable-our-work-block.btnFormKey"))
-            @php
-                $key = config("editable-our-work-block.btnFormKey");
-                $title = $item->block->render_title ?: $item->block->title;
-                $place = " Блок {$title}, {$item->title}";
-            @endphp
-            <button type="button" class="btn btn-primary" x-data
-                    @click.stop="$dispatch('show-request-form', { key: '{{ $key }}', place: '{{ $place }}' })">
-                {{ config("editable-our-work-block.btnText") }}
-            </button>
-        @endif
+        @include("eowb::web.types.our-work.includes.teaser-btn")
     </div>
 </div>
