@@ -8,6 +8,11 @@ return [
             "render" => "eowb::types.our-work",
         ],
     ],
+    "perCol" => 2,
+
+    // Form
+    "btnFormKey" => "call-request",
+    "btnText" => "Хочу также",
 
     // Models
     "customOurWorkRecordModel" => null,

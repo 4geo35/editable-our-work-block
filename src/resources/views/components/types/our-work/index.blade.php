@@ -1,1 +1,17 @@
-<div>Hello</div>
+@props(["block", "isFullPage" => true])
+@if ($block->items->count())
+    @php
+        $perCol = config("editable-our-work-block.perCol");
+        $gridClass = $perCol === 3 ? "md:w-1/3" : "md:w-1/2";
+    @endphp
+    @if ($block->render_title)
+        <x-tt::h2 class="mb-indent-half">{{ $block->render_title }}</x-tt::h2>
+    @endif
+    <div class="row">
+        @foreach($block->items as $index => $item)
+            <div class="col w-full {{ $gridClass }} mb-indent">
+                <x-eowb::types.our-work.item :$item />
+            </div>
+        @endforeach
+    </div>
+@endif
