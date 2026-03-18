@@ -11,7 +11,7 @@ return [
     "perCol" => 2,
 
     // Form
-    "btnFormKey" => "call-request",
+    "btnFormKey" => "call-request", // если указать форму, то нужно, что бы на странице была эта форма в виде модалки
     "btnText" => "Хочу также",
 
     // Models
@@ -27,6 +27,10 @@ return [
     // Templates
     "templates" => [
         "our-work-record" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecord::class,
+
+        "our-work-record-vertical" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecordVertical::class,
+        "tablet-our-work-record-vertical" => \GIS\EditableOurWorkBlock\Templates\TabletOurWorkRecordVertical::class,
+        "mobile-our-work-record-vertical" => \GIS\EditableOurWorkBlock\Templates\MobileOurWorkRecordVertical::class,
 
         "our-work-record-thumb" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecordThumb::class,
     ],

@@ -1,15 +1,21 @@
 @if ($item->recordable->orderedImages->count())
-    <div class="w-[278px] cover-slider-our-work-block-item">
-        <div class="swiper main-slider-our-work-block-item w-full min-h-[300px] overflow-hidden mb-indent-xs">
+    <div class="w-full 2xl:w-[278px] cover-slider-our-work-block-item">
+        <div class="swiper main-slider-our-work-block-item w-full xs:h-[200px] sm:h-[240px] md:h-[314px] lg:h-[202px] xl:h-[258px] 2xl:h-[300px] overflow-hidden mb-indent-xs">
             <div class="swiper-wrapper">
                 @foreach($item->recordable->orderedImages as $image)
                     <div class="swiper-slide">
                         <a data-fslightbox="lightbox-our-work-block-item-{{ $item->id }}"
                            href="{{ route('thumb-img', ['template' => 'original', 'filename' => $image->file_name]) }}">
                             <picture>
+                                <source media="(min-width: 1536px)"
+                                        srcset="{{ route('thumb-img', ['template' => "our-work-record", 'filename' => $image->file_name]) }}">
+                                <source media="(min-width: 768px)"
+                                        srcset="{{ route('thumb-img', ['template' => "our-work-record-vertical", 'filename' => $image->file_name]) }}">
+                                <source media="(min-width: 480px)"
+                                        srcset="{{ route('thumb-img', ['template' => "tablet-our-work-record-vertical", 'filename' => $image->file_name]) }}">
                                 <img
-                                    class="rounded-base"
-                                    src="{{ route('thumb-img', ['template' => 'our-work-record', 'filename' => $image->file_name]) }}"
+                                    class="rounded-base h-full object-cover object-center"
+                                    src="{{ route('thumb-img', ['template' => 'mobile-our-work-record-vertical', 'filename' => $image->file_name]) }}"
                                     alt="">
                             </picture>
                         </a>
@@ -31,7 +37,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="w-[18px] grow-0 shrink-0 basis-[18px] flex flex-col items-center justify-center space-y-indent-xs ml-indent-xs">
+            <div class="grow-0 shrink-0 basis-[34px] sm:basis-[54px] md:basis-[18px] lg:basis-[34px] xl:basis-[24px] 2xl:basis-[18px] hidden sm:flex flex-col items-center justify-center space-y-indent-xs ml-indent-xs">
                 <button type="button" class="next-slider-our-work-block-item cursor-pointer text-primary hover:text-primary-hover">
                     <x-eowb::ico.arrow />
                 </button>

@@ -9,7 +9,7 @@
     @endif
     <div class="row" id="swiperBlockOurWork-{{ $block->id }}">
         @foreach($block->items as $index => $item)
-            <div class="col w-full {{ $gridClass }} mb-indent">
+            <div class="col w-full lg:w-1/2 mb-indent">
                 <x-eowb::types.our-work.item :$item />
             </div>
         @endforeach

@@ -1,12 +1,12 @@
 @props(["item"])
-<div class="h-full flex flex-nowrap space-x-indent p-indent-xs bg-white rounded-base border border-stroke">
+<div class="h-full flex flex-col 2xl:flex-row 2xl:flex-nowrap space-y-indent 2xl:space-y-0 2xl:space-x-indent p-indent-xs bg-white rounded-base border border-stroke">
     @include("eowb::web.types.our-work.includes.slider")
-    <div class="flex-1 h-full flex flex-col justify-between space-y-indent py-indent-half pr-indent-half">
-        <div class="flex-1">
-            @if ($item->recordable->author_name)
-                <div class="text-sm mb-indent-xs">{{ $item->recordable->author_name }}</div>
-            @endif
+    <div class="flex-1 h-full flex flex-col justify-between space-y-indent px-indent-half 2xl:pl-0 2xl:py-indent-half 2xl:pr-indent-half">
+        <div class="flex-1 flex flex-col">
             <div class="text-h4-mobile sm:text-h4 font-semibold">{{ $item->title }}</div>
+            @if ($item->recordable->author_name)
+                <div class="2xl:order-first mt-indent-xs 2xl:mt-0 2xl:mb-indent-xs text-sm">{{ $item->recordable->author_name }}</div>
+            @endif
             @if ($item->recordable->description)
                 <div class="prose max-w-none mt-indent-sm leading-tight">{!! $item->recordable->markdown !!}</div>
             @endif
