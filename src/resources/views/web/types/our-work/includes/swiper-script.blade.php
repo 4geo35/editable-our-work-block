@@ -32,7 +32,8 @@
                         simulateTouch: true,
                         spaceBetween: 24,
                         thumbs: {
-                            swiper: thumbSwiper
+                            swiper: thumbSwiper,
+                            slideThumbActiveClass: "opacity-60",
                         },
                         navigation: {
                             nextEl: nextBtnElement,
