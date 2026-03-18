@@ -8,7 +8,7 @@ return [
             "render" => "eowb::types.our-work",
         ],
     ],
-    "perCol" => 2,
+    "perCol" => 2, // 2 или 3
 
     // Form
     "btnFormKey" => "call-request", // если указать форму, то нужно, что бы на странице была эта форма в виде модалки
@@ -27,6 +27,8 @@ return [
     // Templates
     "templates" => [
         "our-work-record" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecord::class,
+
+        "our-work-record-third" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecordThird::class,
 
         "our-work-record-vertical" => \GIS\EditableOurWorkBlock\Templates\OurWorkRecordVertical::class,
         "tablet-our-work-record-vertical" => \GIS\EditableOurWorkBlock\Templates\TabletOurWorkRecordVertical::class,

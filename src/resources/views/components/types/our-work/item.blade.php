@@ -1,5 +1,9 @@
-@props(["item"])
-<div class="h-full flex flex-col 2xl:flex-row 2xl:flex-nowrap space-y-indent 2xl:space-y-0 2xl:space-x-indent p-indent-xs bg-white rounded-base border border-stroke">
+@props(["item", "perCol"])
+@php
+    $gridClasses = $perCol === 3 ? "" : "2xl:flex-row 2xl:flex-nowrap 2xl:space-y-0 2xl:space-x-indent";
+    $dateFlex = $perCol === 3 ? "xl:flex-wrap 2xl:flex-nowrap xl:space-x-0 2xl:space-x-indent-xs" : "";
+@endphp
+<div class="h-full flex flex-col space-y-indent p-indent-xs {{ $gridClasses }} bg-white rounded-base border border-stroke">
     @include("eowb::web.types.our-work.includes.slider")
     <div class="flex-1 h-full flex flex-col justify-between space-y-indent px-indent-half 2xl:pl-0 2xl:py-indent-half 2xl:pr-indent-half">
         <div class="flex-1 flex flex-col">
@@ -22,7 +26,7 @@
                 </div>
             @endif
             @if ($item->recordable->date_from || $item->recordable->date_to)
-                <div class="flex flex-wrap xs:flex-nowrap mt-indent-sm xs:space-x-indent-xs">
+                <div class="flex flex-wrap xs:flex-nowrap mt-indent-sm xs:space-x-indent-xs {{ $dateFlex }}">
                     @if ($item->recordable->date_from)
                         <div class="w-full xs:flex-1 p-indent-xs xs:space-y-indent-xs mb-indent-xs border border-stroke rounded-base">
                             <div class="text-sm text-body/60 xs:text-nowrap">Дата начала работ:</div>
