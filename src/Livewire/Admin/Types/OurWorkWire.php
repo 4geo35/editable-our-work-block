@@ -74,7 +74,6 @@ class OurWorkWire extends Component
 
         $modelClass = config("editable-our-work-block.customOurWorkRecordModel") ?? OurWorkRecord::class;
         $record = $modelClass::create([
-            "title" => $this->title,
             "short" => $this->short,
             "description" => $this->description,
             "date_from" => empty($this->dateFrom) ? null : $this->dateFrom,
@@ -122,7 +121,6 @@ class OurWorkWire extends Component
          * @var OurWorkRecordInterface $record
          */
         $record->update([
-            "title" => $this->title,
             "short" => $this->short,
             "description" => $this->description,
             "date_from" => empty($this->dateFrom) ? null : $this->dateFrom,

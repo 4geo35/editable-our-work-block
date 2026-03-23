@@ -10,6 +10,13 @@ return [
     ],
     "perCol" => 2, // 2 или 3
 
+    "expandRender" => [
+        "expandOurWorkRecord" => [
+            "class" => \GIS\EditableOurWorkBlock\Facades\OurWorkBlockRenderActions::class,
+            "method" => "expandOurWorkRecord",
+        ]
+    ],
+
     // Form
     "btnFormKey" => null, // если указать форму (например "call-request"), то нужно, что бы на странице была эта форма в виде модалки
     "btnText" => "Хочу также",
