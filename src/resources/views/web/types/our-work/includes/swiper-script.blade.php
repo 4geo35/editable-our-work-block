@@ -3,12 +3,12 @@
         (function () {
             document.addEventListener("DOMContentLoaded", function () {
                 const sliderElement = document.getElementById("swiperBlockOurWork-{{ $block->id }}")
-                if (sliderElement) { initBlockOurWorkSliders{{ $block->id }}(); }
+                if (sliderElement) { initBlockOurWorkSliders{{ $block->id }}(sliderElement); }
             })
         })()
 
-        function initBlockOurWorkSliders{{ $block->id }}() {
-            let sliderItems = document.getElementsByClassName("cover-slider-our-work-block-item")
+        function initBlockOurWorkSliders{{ $block->id }}(sliderElement) {
+            let sliderItems = sliderElement.getElementsByClassName("cover-slider-our-work-block-item")
             Array.from(sliderItems).forEach(element => {
                 let mainSwiperElement = element.querySelector(".main-slider-our-work-block-item")
                 let thumbSwiperElement = element.querySelector(".thumb-slider-our-work-block-item")
