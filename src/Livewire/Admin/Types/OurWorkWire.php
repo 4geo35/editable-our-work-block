@@ -116,6 +116,7 @@ class OurWorkWire extends Component
         $item = $this->findModel();
         if (! $item) { return; }
         if (! $this->checkAuth("update", true)) { return; }
+        $this->validate();
         $record = $item->recordable;
         /**
          * @var OurWorkRecordInterface $record
