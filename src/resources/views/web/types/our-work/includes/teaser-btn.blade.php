@@ -4,7 +4,7 @@
         $title = $item->block->render_title ?: $item->block->title;
         $place = " Блок {$title}, {$item->title}";
     @endphp
-    <button type="button" class="btn btn-primary" x-data
+    <button type="button" class="btn btn-primary mt-indent-xs" x-data
             @click.stop="$dispatch('show-request-form', { key: '{{ $key }}', place: '{{ $place }}' })">
         {{ config("editable-our-work-block.btnText") }}
     </button>
