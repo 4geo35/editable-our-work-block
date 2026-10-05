@@ -1,10 +1,14 @@
 ### Установка
 
-Добавить `"./vendor/4geo35/editable-our-work-block/src/resources/views/livewire/admin/**/*.blade.php",
-        "./vendor/4geo35/editable-our-work-block/src/resources/views/admin/**/*.blade.php",` в `tailwind.admin.config.js`, созданный в пакете `tailwindcss-theme`.
+Добавить в `tailwind.admin.config.js`, созданный в пакете `tailwindcss-theme`.
 
-Добавить `"./vendor/4geo35/editable-our-work-block/src/resources/views/components/**/*.blade.php",
-        "./vendor/4geo35/editable-our-work-block/src/resources/views/web/**/*.blade.php",` в `tailwind.config.js`, созданный в пакете `tailwindcss-theme`.
+    "./vendor/4geo35/editable-our-work-block/src/resources/views/livewire/admin/**/*.blade.php",
+    "./vendor/4geo35/editable-our-work-block/src/resources/views/admin/**/*.blade.php",
+
+Добавить в `tailwind.config.js`, созданный в пакете `tailwindcss-theme`.
+
+    "./vendor/4geo35/editable-our-work-block/src/resources/views/components/**/*.blade.php",
+    "./vendor/4geo35/editable-our-work-block/src/resources/views/web/**/*.blade.php",
 
 Запустить миграции для создания таблиц `php artisan migrate`
 
@@ -19,3 +23,16 @@
 Установить lightbox `npm install fslightbox`, добавить в `app.js`:
 
     import "fslightbox"
+
+#### Views
+
+Сокращение для представлений: `eowb`
+
+#### Config
+
+Название файла: `editable-our-work-block`  
+Название типа блока: `ourWork`
+
+- `perCol` => `2`: количество элементов в строке при выводе. Возможные значения `2` или `3`
+- `btnFormKey` => `null`: если указать форму (например "call-request"), то нужно, что бы на странице была эта форма в виде модалки
+- `btnText` => `Хочу также`: текст для кнопки вызова формы
